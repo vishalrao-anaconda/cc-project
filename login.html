@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Rentify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Background image */
+      background-image: url('https://t4.ftcdn.net/jpg/07/38/04/47/360_F_738044728_WQl8AC5gUiU2BIG65afjeq7fnQQYUaxk.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 350px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #f39c12;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f39c12;
+    }
+
+    a:hover {
+      color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Rentify</h2>
+
+    <form onsubmit="return handleLogin(event)">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p style="margin-top:10px;">Don't have an account? <a href="Register.html">Register</a></p>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Hardcoded demo users (for front-end only)
+      const users = {
+        "vishalrao34309@gmail.com": "7986641063",
+        "vikas125@gmail.com": "123456789"
+      };
+
+      if (users[email] && users[email] === password) {
+        alert("Login successful!");
+        window.location.href = "Presentation.html"; // Redirect after login
+      } else {
+        alert("Invalid email or password!");
+      }
+    }
+  </script>
+</body>
+</html>

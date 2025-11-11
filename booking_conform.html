@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation - Rentify</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('https://img.freepik.com/free-photo/stylish-elegant-woman-car-salon_1157-20980.jpg?semt=ais_hybrid&w=740&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h2 { color: #2c3e50; margin-bottom: 20px; }
+    p { margin: 8px 0; font-size: 16px; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #f39c12;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover { background: #e67e22; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🎉 Booking Confirmed!</h2>
+    <p><strong>Name:</strong> <span id="fullname"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Date:</strong> <span id="date"></span></p>
+    <p><strong>Number of Days:</strong> <span id="days"></span></p>
+    <p><strong>Delivery Point:</strong> <span id="address"></span></p>
+    <p><strong>Vehicle:</strong> <span id="vehicle"></span></p>
+    
+    <a href="presentation.html" class="btn">← Back to Home</a>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("bookingData"));
+    if (data) {
+      document.getElementById("fullname").textContent = data.fullname;
+      document.getElementById("email").textContent = data.email;
+      document.getElementById("date").textContent = data.date;
+      document.getElementById("days").textContent = data.days;
+      document.getElementById("address").textContent = data.address;
+      document.getElementById("vehicle").textContent = data.vehicle;
+    }
+  </script>
+</body>
+</html>

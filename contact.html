@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Rentify</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1529369623266-f5264b696110?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyJTIwcmVudGFsfGVufDB8fDB8fHww');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contact-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #f39c12;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+    }
+
+    .success {
+      text-align: center;
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .back-btn:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <p id="successMessage" class="success">✅ Thank you! We have received your message!</p>
+
+    <!-- Back to Home button -->
+    <a href="Presentation.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent page reload
+
+      const name = document.getElementById("name").value.trim();
+
+      const successMsg = document.getElementById("successMessage");
+      successMsg.innerHTML = `✅ Thank you, ${name}. We have received your message!`;
+      successMsg.style.display = "block";
+
+      // Optional: clear form fields
+      this.reset();
+    });
+  </script>
+</body>
+</html>

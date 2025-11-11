@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Rentify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Background image */
+      background-image: url('https://t4.ftcdn.net/jpg/07/38/04/47/360_F_738044728_WQl8AC5gUiU2BIG65afjeq7fnQQYUaxk.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .register-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 350px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #f39c12;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f39c12;
+    }
+
+    a:hover {
+      color: #e67e22;
+    }
+
+    .success {
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Create an Account</h2>
+
+    <p id="message"></p>
+
+    <form onsubmit="return handleRegister(event)">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirm" placeholder="Confirm Password" required>
+      <button type="submit" class="btn">Register</button>
+    </form>
+
+    <p style="margin-top:10px;">Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script>
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+      const message = document.getElementById("message");
+
+      if (password !== confirm) {
+        message.textContent = "Passwords do not match!";
+        message.className = "error";
+        return;
+      }
+
+      // Save to localStorage (demo purpose only)
+      let users = JSON.parse(localStorage.getItem("rentifyUsers")) || {};
+      if (users[email]) {
+        message.textContent = "User already registered!";
+        message.className = "error";
+        return;
+      }
+
+      users[email] = { name, password };
+      localStorage.setItem("rentifyUsers", JSON.stringify(users));
+
+      message.textContent = "Registration successful! Redirecting to login...";
+      message.className = "success";
+
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* ============================
+   RENTIFY WEBSITE STYLE
+   ============================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12;
+}
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1511910849309-0e2b31d5d0c6?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+
+/* ---------- VEHICLES SECTION ---------- */
+
+.vehicles {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.vehicles h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.vehicles h2::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background: #f39c12;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* ---------- VEHICLE CARDS ---------- */
+
+.vehicle-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px 20px;
+}
+
+.card-body h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.card-body p {
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn {
+  display: inline-block;
+  background: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #e67e22;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 768px) {
+  .vehicle-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    padding: 10px 15px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+}

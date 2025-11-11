@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentify - Home</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Add background styling directly here or move to style.css */
+
+    body {
+      background-image: url('https://images.pexels.com/photos/30112424/pexels-photo-30112424.jpeg?cs=srgb&dl=pexels-dbaler-30112424.jpg&fm=jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Add a semi-transparent overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    header, footer, section {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background-color: rgba(44, 62, 80, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .hero {
+      height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .vehicles {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 40px auto;
+      width: 90%;
+      max-width: 1200px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .vehicles h2 {
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .vehicle-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 300px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .card-body p {
+      color: #555;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f39c12;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+    }
+
+    footer {
+      background-color: rgba(44, 62, 80, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .vehicle-list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Rentify</h1>
+    <nav>
+      <a href="Presentation.html">Home</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" style="float:right; color:red;">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <h2>Get Your Ride, Anytime, Anywhere</h2>
+  </section>
+
+  <!-- Vehicles -->
+  <section class="vehicles" id="vehicles">
+    <h2>Available Vehicles</h2>
+    <div class="vehicle-list">
+      <div class="card">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/C-Class/10858/1755843786675/front-left-side-47.jpg" alt="Car">
+        <div class="card-body">
+          <h3>Luxury Car</h3>
+          <p>₹2500/day</p>
+          <a href="booking.html" class="btn">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.autocarindia.com/Features/KTM%20Duke.jpg?w=700&c=1" alt="Bike">
+        <div class="card-body">
+          <h3>Sports Bike</h3>
+          <p>₹800/day</p>
+          <a href="booking.html" class="btn">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.carandbike.com/bike-images/colors/bajaj/chetak/bajaj-chetak-velluto-russo.jpg?v=1677823230" alt="Scooter">
+        <div class="card-body">
+          <h3>Scooter</h3>
+          <p>₹400/day</p>
+          <a href="booking.html" class="btn">Rent Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2025 Rentify | Any Query contact: +917986641063, +917710715895</p>
+  </footer>
+</body>
+</html>
